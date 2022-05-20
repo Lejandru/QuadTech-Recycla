@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block css %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
+{% endblock %}
+
+{% block main %}
+<div class="p-5 mb-4 bg-light rounded-3 border">
+  <div class="container-fluid py-5">
+    <h1 class="display-5 fw-bold text-center">Welcome Administrator</h1>
+  
+  </div>
+  <div>
+    <h2>Add A New Recycling Partner Here</h2>
+    {% include 'flash_messages.html' %}
+    <form method="post" enctype = 'multipart/form-data' action="{{url_for('addPartner')}}">
+      {{ form.csrf_token }}
+      <div class="form-group">
+          {{ form.name.label }} {{ form.name(class="form-control") }}
+      </div>
+      <div class ="form-group">
+          {{ form.location.label}} {{ form.location(class="form-control")}}
+      </div>
+      <div class="form-group">
+          {{ form.admin.label }} {{ form.admin(class="form-control") }}
+      </div>
+      <div class="form-group">
+          {{ form.email.label }} {{ form.email(class="form-control") }}
+      </div>
+      <div class ="form-group">
+          {{ form.phone.label}} {{ form.phone(class="form-control")}}
+  </div>
+
+  <br/>
+  <button type="Submit" class="btn btn-primary">Add Partner</button>
+</form>
+  </div>
+</div>
+{% endblock %}
+
+{% block js %}
+<script src="{{ url_for('static', filename='js/app.min.js') }}" charset="utf-8"></script>
+{% endblock %}

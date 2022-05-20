@@ -1,0 +1,134 @@
+
+
+<!DOCTYPE html>
+<link href="/static/css/bootstrap.min.css" rel="stylesheet">
+<html lang="en">
+    {% include "header.html" %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recycling Map</title>
+
+    {% block css %}
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    {% endblock %}
+
+{% block main %}   
+   <h1></h1>
+    <!-- <div id="floating-panel">
+      
+      <b>Drop Off Location: </b>
+      <select id="end">
+        <option value="17.99451025254291, -76.79973900254369">ROJ Depot - 21 Rousseau Road</option>
+
+        <option value="18.035137306187757, -76.81215879935688">Total Service Station - Red Hills Road</option>
+
+        <option value="18.045297656029657, -76.82293253109448">Total Service Station - 29 Mackville Terrace
+</option>
+        <option value="18.051157894977877, -76.79300655340812">Total Service Station - Manor Park</option>
+
+        <option value="18.007738218909537, -76.77324473806301">Total Service Station - Stanton Terrace</option>
+
+        <option value="18.03273840513693, -76.795992324572">Jamaica Environment Trust (JET) - Constant Sprint Road</option>
+
+        <option value="18.02239169036883, -76.77279897536388">Chilitos Jamexican Food - 88 Hope Road</option>
+
+        <option value="18.004666611047785, -76.8431888600233">Seventh Day Adventist Church - Seaview Gardens</option>
+
+        <option value="18.01570929320122, -76.7471918139853">Mona Anglican Church of Ascension - 1A Dasiy Avenue</option>
+
+        <option value="17.982238063911183, -76.80465781795873">Boys Town Football Club</option>
+
+        <option value="18.029955739455808, -76.83006762932683">Pembrooke Hall Primary School</option>
+
+        <option value="18.012575207368172, -76.811872067951">Tarrant Primary School</option>
+
+        <option value="18.032313244862316, -76.79716614556301">The Queen's School</option>
+
+        <option value="17.97990747458352, -76.7797451487295">Convent of Mercy Academy</option>
+
+        <option value="18.018587156278002, -76.76956154861931">St. Peter and Paul Preparatory School</option>
+
+        <option value="18.007652597379785, -76.79792410654652">Holy Childhood Preparatory School</option>
+
+        <option value="17.98491725666934, -76.78477812394851">Allman Town Primary</option>
+
+        <option value="18.017755996066576, -76.79820409374732">Half Way Tree Primary</option>
+
+        <option value="18.00069570025111, -76.8076089568967">Norman Manley High School</option>
+
+        <option value="17.977339330749036, -76.78462939748555">St. Georges College</option>
+
+        <option value="17.997467181215676, -76.82028381448201">Haile Selassie High School</option>
+
+        <option value="18.04714933840992, -76.8138097017014">Meadowbrooke Preparatory School</option>
+        */
+
+      </select>
+    </div> -->
+    <div id="map"></div>
+{% endblock %}
+
+
+    
+
+    <div id="floating-panel">
+      
+      <b>Drop Off Location: </b>
+      <select id="end">
+        <option value="17.99451025254291, -76.79973900254369">ROJ Depot - 21 Rousseau Road</option>
+
+        <option value="18.035137306187757, -76.81215879935688">Total Service Station - Red Hills Road</option>
+
+        <option value="18.045297656029657, -76.82293253109448">Total Service Station - 29 Mackville Terrace
+</option>
+        <option value="18.051157894977877, -76.79300655340812">Total Service Station - Manor Park</option>
+
+        <option value="18.007738218909537, -76.77324473806301">Total Service Station - Stanton Terrace</option>
+
+        <option value="18.03273840513693, -76.795992324572">Jamaica Environment Trust (JET) - Constant Sprint Road</option>
+
+        <option value="18.02239169036883, -76.77279897536388">Chilitos Jamexican Food - 88 Hope Road</option>
+
+        <option value="18.004666611047785, -76.8431888600233">Seventh Day Adventist Church - Seaview Gardens</option>
+
+        <option value="18.01570929320122, -76.7471918139853">Mona Anglican Church of Ascension - 1A Dasiy Avenue</option>
+
+        <option value="17.982238063911183, -76.80465781795873">Boys Town Football Club</option>
+
+        <option value="18.029955739455808, -76.83006762932683">Pembrooke Hall Primary School</option>
+
+        <option value="18.012575207368172, -76.811872067951">Tarrant Primary School</option>
+
+        <option value="18.032313244862316, -76.79716614556301">The Queen's School</option>
+
+        <option value="17.97990747458352, -76.7797451487295">Convent of Mercy Academy</option>
+
+        <option value="18.018587156278002, -76.76956154861931">St. Peter and Paul Preparatory School</option>
+
+        <option value="18.007652597379785, -76.79792410654652">Holy Childhood Preparatory School</option>
+
+        <option value="17.98491725666934, -76.78477812394851">Allman Town Primary</option>
+
+        <option value="18.017755996066576, -76.79820409374732">Half Way Tree Primary</option>
+
+        <option value="18.00069570025111, -76.8076089568967">Norman Manley High School</option>
+
+        <option value="17.977339330749036, -76.78462939748555">St. Georges College</option>
+
+        <option value="17.997467181215676, -76.82028381448201">Haile Selassie High School</option>
+
+        <option value="18.04714933840992, -76.8138097017014">Meadowbrooke Preparatory School</option>
+        
+
+      </select>
+    </div>
+{% block js %}
+
+    <script src="{{ url_for('static', filename='js/script.js') }}" charset="utf-8"></script>
+
+{% endblock %}
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAV_9Uf886xp02J6oBxkXdstu1-59Q-4iM&map_ids=37f1e2592a7ca566&callback=initMap" ></script>
+    {% include "footer.html" %}
+</body>
+</html>

@@ -1,0 +1,79 @@
+#game{
+    height:400px;
+    width:600px;
+    background-image: url('sea.jpg');
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: bottom;
+    border:4px solid black;
+    margin-left:13%;
+    margin-top:2%;
+    overflow:hidden;
+    position: relative;
+}
+
+body{
+    background-color:lightskyblue;  
+}
+
+#pipe1{
+    position:absolute;
+    width: 50px;
+    height: 50%;
+    transform: rotate(180deg);
+    background-color:black;
+    background-image: url(stone1.png);
+}
+
+#pipe2{
+    position:absolute;
+    width: 50px;
+    height: 40%;
+    top: 80%;
+    background-color:black;
+    background-image: url(stone1.png);
+}
+
+.obstacle{
+    left:95%;
+    animation: block 6s ease-in-out infinite;
+    background-repeat: no-repeat;
+    /* background-size: cover; */
+}
+
+/* .obstacle{
+    width:50px;
+    height:500px;
+    position: relative;
+    left: 400px;
+    animation: block 5s ease-in-out infinite;
+} */
+
+
+@keyframes block{
+    0%{left:400px}
+    100%{left:-50px}
+}
+
+div#bag{
+    position:absolute;
+    top:200px;
+    left:90px;
+    background-color: red;
+    border-radius: 50%;
+    height:35px;
+}
+
+#bag img{
+    height:35px;
+    width:35px;
+
+}
+
+#score{
+    color:white;
+    font-size: x-large;
+    font-weight: bold;
+    margin-left: 2%;
+    margin-top: 2%;
+}

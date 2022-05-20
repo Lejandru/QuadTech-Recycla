@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<link href="/static/css/bootstrap.min.css" rel="stylesheet">
+<html lang="en">
+    {% include "header.html" %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenges</title>
+
+  
+    <h1>Pick a Game</h1>
+    <div class = 'row row-cols-2 row-cols-md-4'>
+        
+        <div class = "col-md-4 mb-3">
+            <div class ="card h-100">
+                
+                    <div class = "card-body">
+                        <h5 class="card-title">Memory Game</h5>
+                        <p class ="card-subtitle mb-3 text-muted"><img class ="image mr-1" width="100px" height="100px" src="{{ url_for('static', filename='images/memory.jpg') }}">Find The Matching Cards!</p>
+                    </div>
+                    <a href="{{ url_for('memory') }}">
+                        <div class = "card-footer bg-primary_ test text-center">
+                            Play game
+                        </div>
+                    </a>
+            </div>
+        </div>
+
+
+
+
+        <div class = "col-md-4 mb-3">
+            <div class ="card h-100">
+                
+                    <div class = "card-body">
+                        <h5 class="card-title">Flappy Plastic</h5>
+                        <p class ="card-subtitle mb-3 text-muted"><img class ="image mr-1"width="100px" height="100px" src="{{ url_for('static', filename='images/flappy.jpg') }}">Flappy Plastic Game</p>
+                    </div>
+                    <a href="{{ url_for('flappy') }}">
+                        <div class = "card-footer bg-primary_ test text-center">
+                            Play game
+                        </div>
+
+                    </a>
+            </div> 
+        
+    </div> 
+  
+
+
+    {% include "footer.html" %}
+
+
+
+</html>
+
+

@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+    {% block main %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flappy Bag</title>
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/flappy.css')}}">
+</head>
+
+<body onclick="jump()">
+    <div class="container justify-content-center">
+        <button type="button" class="btn btn-outline-primary" id="close" >Close</button>
+
+        <div class="header row d-flex flex-column justify-content-center">
+            <h1 class="p-2"> Flappy Bag!</h1>
+            <div class="game-info d-flex flex-column">
+                Time: <span id="time" >00:00:00</span>
+                <br>
+                Score: <span id="score">00</span>
+            </div>
+        </div>
+
+        <div id="start-overlay" class="overlay-text visible justify-content-center">
+            <div class="card text-center text-white bg-dark mb-3" style="width: 50%; height:40%; color: #9ADB60;">
+                <div class="card-body">
+                <p class="card-text">Welcome!</p>
+                <!-- <h5 class="card-text">Click the button below to start.</h5> -->
+                <ol class="card-text">
+                    <li>Click the button below to start.</li>
+                    <li>Jump to clear the obstacles. (space, click, or tap to jump)</li>
+                    <li>Stay clear of the obstacles for as long as possible.</li>
+                </ol>
+                <button type="button" class="btn btn-outline-dark" id="start-button" >Click to Start</button>  
+                </div>
+            </div>             
+        </div>
+
+        <div id="end-overlay" class="overlay-text justify-content-center">
+            <div class="card text-center text-white bg-dark mb-3" style="width: 50%; height:40%; background-color: #9ADB60;">
+                <div class="card-body">
+                  <h2 >Game Over</h2>
+                  <!-- <button type="button" class="btn btn-danger" id="play-again" >Click Here to Play Again</button>  -->
+                </div>
+              </div>             
+        </div>
+
+        <div id="game" class="justify-content-center">
+            <div id="pipe1" class="obstacle"></div>
+            <div id="pipe2" class="obstacle"></div>
+            <div id="bag"><img src="{{url_for('static', filename='flappy2/bag.png')}}"> </div>
+        </div>
+        
+    </div>
+    <script src=" {{url_for('static', filename='js/flappy.js')}}"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+</body>
+</html>
+{% endblock %}

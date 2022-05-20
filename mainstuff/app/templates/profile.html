@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="{{url_for('static', filename='css/profile.css')}}">
+
+</head>
+
+<body>
+
+    <h2 style="text-align:center">Profile</h2>
+
+    <div class="card">
+        <img class="logo" style="width:50%" src="{{ url_for('static', filename='images/logo.png') }}">
+
+
+
+        <h1>{{current_user.firstName}} {{current_user.lastName}}</h1>
+
+        <p class="title">Username: {{current_user.userName}} </p>
+        <p class="title">ID Number: {{current_user.id}} </p>
+        <p class="title">Total Weight: {{current_user.bottle_weight}} kg</p>
+        <p class="title">Game Points: </p>
+        <p class="title">Total Points: </p>
+
+
+        <a href="{{ url_for('leaderboard') }}">
+            <div class="card-footer bg-primary_ test text-center">
+                Check Your Rank 
+        </a>
+
+    </div>
+
+</body>
+
+</html>
+
+
+{% endblock %}

@@ -1,0 +1,40 @@
+.leaderboard{
+    max-width: 400px;
+    border: 1px solid black;
+    margin: auto;
+    box-shadow: 2px 2px 16px 6px #999;
+}
+
+.header{
+    background-color: #9ADB60;
+    
+
+}
+
+table{
+    background-color:#9ADB60 ;
+    color:#ffffffff;
+    width: 100%;
+
+}
+
+thead{
+    font-size: 0.75rem;
+    color: #555;
+}
+
+tbody{
+
+    font-weight: bold;
+}
+
+tbody tr:nth-child(2n){
+    background-color: #A3D873;
+}
+ 
+
+*{
+    margin: 0;
+    padding: 0;
+
+}

@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block main %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/leader.css')}}">
+<!-- <h2>Leaderboard</h2>
+
+    {% for p in person %}
+
+       <br>{{ p.userName }} ......... {{ p.bottle_weight }}<br/> 
+
+       {% endfor %}
+
+        <br/>
+       
+    </form> -->
+
+
+<div class="p-5 mb-4 bg-light rounded-3 border">
+    <div class="container-fluid py-5">
+
+        <div class="leaderboard">
+            <header>
+                <h2>Leaderboard</h2>
+                
+            </header>
+
+            <table>
+                <thead>
+                    <th class="username"> Username </th>
+                    <th class=" points"> Points </th>
+                </thead>
+
+
+
+                {% for p in person %}
+                   {% if p.bottle_weight!= None %} 
+                <tbody>
+                    <tr>
+
+                        <td class="user">{{ p.userName }} </td>
+
+                        <td class="weight"> {{ p.bottle_weight }} </td>
+
+                    </tr>
+                </tbody>
+                {% endif %}  
+                {% endfor %}
+            </table>
+            
+
+            <br />
+        </div>
+        <p></p>
+    </div>
+</div>
+
+
+        
+      <br>
+    
+{% endblock %}

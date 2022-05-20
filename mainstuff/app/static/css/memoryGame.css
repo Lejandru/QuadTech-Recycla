@@ -1,0 +1,150 @@
+* {
+  padding:0;
+  margin:0;
+  box-sizing: border-box;
+} 
+
+
+#start-button{
+  font-size:24px;
+  background-color: #66cbff;
+  color: #ffffff;
+  border-radius: 12px;
+  padding: 32px 16px;
+  transition-duration:0.5s;
+  width:50%;
+}
+
+#start-button :hover{
+ box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+
+/* body{
+  height: 100vh;
+  background: #011627;
+  display:flex;
+  color:red;
+} */
+
+.memory-game{
+ /* width:600px; */
+ width:70%;
+ /* height: 400px; */
+ height: auto;
+ display: flex;
+ flex-wrap: wrap;
+ margin:auto;
+ justify-content: center;
+ perspective:1000px;
+ align-items:center;
+}
+
+.card{
+  /* width:20%; 
+  height:20%; */
+  /* position:relative; */
+  margin:5px;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform .5s;
+  width:120px;
+  height:120px;
+}
+
+.card-text{
+ font-size: large;
+}
+
+.card:active{
+  transform: scale(.97);
+  transition: transform .2s;
+}
+
+.card.flip{
+  transform: rotateY(180deg); 
+}
+
+img{
+  width:120px;
+}
+
+.display-card{
+  position: relative;
+  /* width:100%;
+  height:100%; */
+  border-radius: 5px;
+  background: #66cbff;
+  padding: 5px;
+  /* top:0;
+  left:0; */
+  backface-visibility: hidden;
+}
+
+.face-card{
+  position: absolute;
+  /* width:100%;
+  height:100%; */
+  border-radius: 5px;
+  /* padding:50px; */
+  /* top:30px;
+  left:30px; */
+  transform: rotateY(180deg);
+}
+
+.overlay-text{
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  justify-content:center;
+  align-items:center;
+  z-index: 100;
+  font-weight: bolder;   
+}
+
+.overlay-text.visible{
+  display:flex;
+  animation: overlay-grow 500ms forwards;
+}
+
+
+@keyframes overlay-grow{
+  from{
+    background-color: rbga(0,0,0,0);
+    font-size:0;
+  }
+  to{
+    background-color: rbga(0,0,0,.8);
+    font-size: 5em;
+  }
+}
+
+@media(max-width:600px){
+ .game-container{
+   grid-template-columns:repeat(2,auto);
+ }
+} 
+
+/* .game-info{
+ flex-direction:column;
+ align-items:center;
+} */
+
+.header{
+ align-content: center;
+ width:min-content;
+ text-align: center;
+}
+
+div.header{
+ margin-left: 45%;
+}
+
+/* .start-overlay{
+
+ margin:50%;
+
+} */

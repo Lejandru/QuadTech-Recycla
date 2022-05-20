@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block css %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
+{% endblock %}
+
+{% block main %}
+<div class="p-5 mb-4 bg-light rounded-3 border">
+  <div class="container-fluid py-5">
+    <h1 class="display-5 fw-bold">Create A New Group</h1>
+  </div>
+  {% include 'flash_messages.html' %}
+  <form action="{{ url_for('addGroups') }}" method="post">
+    {{ form.csrf_token }}
+    <div class="form-group">
+      {{ form.groupName.label }}
+      {{ form.groupName(class='form-control', placeholder="Enter Your Group Name") }}
+    </div>
+
+    <br/>
+    <button type="submit" name="submit" class="btn btn-primary btn-block">Add New Member</button>
+  </form>
+
+</div>
+{% endblock %}
+
+{% block js %}
+<script src="{{ url_for('static', filename='js/app.min.js') }}" charset="utf-8"></script>
+{% endblock %}

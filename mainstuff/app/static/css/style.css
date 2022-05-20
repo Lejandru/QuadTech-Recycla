@@ -1,0 +1,31 @@
+html{
+    box-sizing: border-box;
+    font-size: 100%;
+}
+
+*, *::before, *::after{
+    box-sizing: inherit;
+}
+
+
+#map{
+    height: 70vh;
+    top: 48px;
+    
+
+    
+
+}
+
+#floating-panel {
+  position: bottom;
+  top: 600px;
+  left: 50%;
+  z-index: 5;
+  background-color: #fff;
+  padding: 50px;
+  text-align: center;
+  font-family: "Roboto", "sans-serif";
+  line-height: 30px;
+  padding-left: 10px;
+}

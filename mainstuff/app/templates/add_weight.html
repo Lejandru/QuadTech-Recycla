@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block main %}
+    <h2>Add Weight</h2>
+    <form method="post" enctype = 'multipart/form-data' action="{{url_for('add_weight')}}">
+            {{ form.csrf_token }}
+            <div class="form-group">
+                {{ form.user_id.label }} {{ form.user_id(class="form-control") }}
+            </div>
+            <div class="form-group">
+                {{ form.email.label }} {{ form.email(class="form-control") }}
+            </div>
+            <div class ="form-group">
+                {{ form.weight.label }} {{ form.weight(class="form-control") }}
+            </div>
+
+
+        <br/>
+        <button type="Submit" class="btn btn-primary">Complete</button>
+    </form>
+{% endblock %}
